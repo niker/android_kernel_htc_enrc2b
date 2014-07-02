@@ -26,6 +26,10 @@ touch /data/local/em_modules_deployed
 # feed urandom data to /dev/random to avoid system blocking (potential security risk, use at own peril!)
 /elitekernel/rngd --rng-device=/dev/urandom --random-device=/dev/random --background --feed-interval=60
 
+# disable KSM and use zcache instead
+echo 0 > /sys/kernel/mm/ksm/run
+
+
 # startup time tweaks:
 
 # enable smartdimmer
