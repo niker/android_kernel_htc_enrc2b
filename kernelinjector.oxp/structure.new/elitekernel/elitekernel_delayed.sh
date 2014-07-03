@@ -60,7 +60,11 @@ echo "800" > /sys/block/mmcblk0/queue/iosched/async_write_expire
 echo "0,1,2,5,7,15" > /sys/module/lowmemorykiller/parameters/adj
 echo "1536,3072,6144,10240,12288,18432" > /sys/module/lowmemorykiller/parameters/minfree
 
-
+# temporary workaround for stock OTA updater wakelock bugs
+pm disable com.google.android.gms/com.google.android.gms.update.SystemUpdateService\$Receiver
+pm disable com.google.android.gms/com.google.android.gms.update.SystemUpdateService\$SecretCodeReceiver
+pm disable com.google.android.gms/com.google.android.gms.update.SystemUpdateService\$ActiveReceiver
+kill $(pidof com.google.android.gms)
 
 touch /data/local/em_delayed_tweaks
 
