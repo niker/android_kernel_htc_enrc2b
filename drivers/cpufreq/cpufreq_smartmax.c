@@ -91,22 +91,22 @@ static unsigned int min_cpu_load;
  * The minimum amount of time in nsecs to spend at a frequency before we can ramp up.
  * Notice we ignore this when we are below the ideal frequency.
  */
-#define DEFAULT_UP_RATE 30000
+#define DEFAULT_UP_RATE 40000
 static unsigned int up_rate;
 
 /*
  * The minimum amount of time in nsecs to spend at a frequency before we can ramp down.
  * Notice we ignore this when we are above the ideal frequency.
  */
-#define DEFAULT_DOWN_RATE 60000
+#define DEFAULT_DOWN_RATE 80000
 static unsigned int down_rate;
 
 /* in nsecs */
-#define DEFAULT_SAMPLING_RATE 30000
+#define DEFAULT_SAMPLING_RATE 40000
 static unsigned int sampling_rate;
 
 /* in nsecs */
-#define DEFAULT_INPUT_BOOST_DURATION 1200000000
+#define DEFAULT_INPUT_BOOST_DURATION 600000000
 static unsigned int input_boost_duration;
 
 static unsigned int touch_poke_freq = 760000;

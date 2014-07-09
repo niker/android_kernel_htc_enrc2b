@@ -1907,7 +1907,7 @@ static int __init no_cleancache(char *s)
 
 __setup("nocleancache", no_cleancache);
 
-static int use_frontswap = 1;
+static int use_frontswap = 0;
 
 static int __init no_frontswap(char *s)
 {
