@@ -21,6 +21,7 @@ insmod /system/lib/modules/raw_ip_net.ko
 insmod /system/lib/modules/baseband_usb_chr.ko
 insmod /system/lib/modules/cdc_acm.ko
 insmod /system/lib/modules/exfat.ko
+insmod /system/lib/modules/ntfs.ko
 touch /data/local/em_modules_deployed
 
 
