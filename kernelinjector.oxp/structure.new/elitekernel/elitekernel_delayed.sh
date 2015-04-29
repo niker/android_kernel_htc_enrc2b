@@ -61,9 +61,18 @@ echo "0,1,2,5,7,15" > /sys/module/lowmemorykiller/parameters/adj
 echo "1536,3072,6144,10240,12288,18432" > /sys/module/lowmemorykiller/parameters/minfree
 
 # temporary workaround for stock OTA updater wakelock bugs
+pm disable com.google.android.gsf/com.google.android.gsf.update.SystemUpdateActivity
+pm disable com.google.android.gsf/com.google.android.gsf.update.SystemUpdateService
+pm disable com.google.android.gsf/com.google.android.gsf.update.SystemUpdateService\$Receiver
+pm disable com.google.android.gsf/com.google.android.gsf.update.SystemUpdateService\$ActiveReceiver
+pm disable com.google.android.gsf/com.google.android.gsf.update.SystemUpdateService\$SecretCodeReceiver
+pm disable com.google.android.gsf/com.google.android.gsf.usagestats.StatsUploadService\$Receiver
+pm disable com.google.android.gms/com.google.android.gms.update.SystemUpdateActivity
+pm disable com.google.android.gms/com.google.android.gms.update.SystemUpdateService
 pm disable com.google.android.gms/com.google.android.gms.update.SystemUpdateService\$Receiver
-pm disable com.google.android.gms/com.google.android.gms.update.SystemUpdateService\$SecretCodeReceiver
 pm disable com.google.android.gms/com.google.android.gms.update.SystemUpdateService\$ActiveReceiver
+pm disable com.google.android.gms/com.google.android.gms.update.SystemUpdateService\$SecretCodeReceiver
+kill $(pidof com.google.android.gsf)
 kill $(pidof com.google.android.gms)
 
 touch /data/local/em_delayed_tweaks
